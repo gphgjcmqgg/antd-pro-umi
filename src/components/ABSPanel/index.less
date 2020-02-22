@@ -1,0 +1,83 @@
+@import '../../styles/theme/default.less';
+
+.abs-panel {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  &.abs-panel-no-margin-top{
+    margin-top: 0;
+  }
+  &.abs-panel-no-margin-bottom{
+    margin-bottom: 0;
+  }
+  &-header {
+    .abs-panel-title {
+      border-left: 8px solid @abs-panel-title-border-color;
+      // color: @yellow-6;
+      font-size: @font-l;
+      padding-left: 8px;
+      margin-bottom: 6px;
+      display: inline-block;
+      line-height: normal;
+      // position: relative;
+      // display: inline-block;
+      // height: 24px;
+      // line-height: 24px;
+      // padding-left: 20px;
+      // padding-right: 8px;
+      // background-color: @abs-panel-bg;
+      // &:after {
+      //   position: absolute;
+      //   right: -17px;
+      //   top: 0;
+      //   content: '';
+      //   width: 0;
+      //   height: 0;
+      //   border-bottom: 24px solid @abs-panel-bg;
+      //   border-right: 17px solid transparent;
+      // }
+    }
+    .abs-panel-box {
+      float: right;
+      margin-right: 20px;
+      text-align: right;
+      .abs-comment{
+        display: inline-block;
+        font-size: @font-m;
+      }
+      &-button {
+        display: inline-block;
+        margin-left: 20px;
+      }
+    }
+    
+  }
+  &-content {
+    position: relative;
+    padding: 20px;
+    overflow: hidden;
+    background-color: @grey-1;
+  }
+  &.abs-panel-content-bg-black {
+    .abs-panel-content {
+      background-color: @abs-panel-bg-black;
+    }
+  }
+  &.abs-panel-no-padding {
+    .abs-panel-content {
+      padding: 0;
+    }
+  }
+  &.abs-panel-loading {
+    .abs-panel-content {
+      display: flex;
+      justify-content: center;
+      height: 200px;
+      align-items: center;
+    }
+  }
+  &.abs-panel-border {
+    .abs-panel-content {
+      border: 1px solid @abs-panel-border-color;
+    }
+  }
+}

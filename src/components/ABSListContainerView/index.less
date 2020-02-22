@@ -1,0 +1,35 @@
+@import "../../styles/theme/default.less";
+@import "../../components/ABSListContainer/index.less";
+
+.abs-list-container-view {
+  height: calc(~"100% - 50px");
+  flex: 1;
+  .abs-panel {
+    height: calc(~"100% - 50px");
+    &-content {
+      height: calc(~"100% - 23px");
+      background-color: @grey-1;
+    }
+  }
+  .abs-new-offer {
+    background-color: @red-14;
+    text-align: center;
+    font-size: @font-m;
+    height: 36px;
+    line-height: 36px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(~"100%");
+    cursor: pointer;
+    color: @yellow-1;
+  }
+  .abs-list-container-footer {
+    .absListContainerFooterStyle()
+  }
+  .abs-deal-list-pagination {
+    position: absolute;
+    right: 14px;
+    bottom: 8px;
+  }
+}

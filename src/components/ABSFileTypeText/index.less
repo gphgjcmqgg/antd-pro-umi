@@ -1,0 +1,112 @@
+@import "../../styles/theme/default.less";
+
+.abs-upload-file-text {
+  display: flex;
+  flex-direction: row;
+  margin-top: 14px;
+  .abs-file-text {
+    &-image {
+      font-size: @font-40;
+
+      &-word {
+        color: @blue-22;
+      }
+
+      &-xls {
+        color: @green-6;
+      }
+
+      &-pdf {
+        color: @red-11;
+      }
+
+      &-ppt {
+        color: @orange-7;
+      }
+
+      &-zip {
+        color: @red-12;
+      }
+
+      &-pic {
+        color: @blue-25;
+      }
+
+      &-common-type {
+        color: @grey-27;
+      }
+    }
+
+    &-delete {
+      font-size: 10pt;
+      color: @grey-2;
+      margin-top: 2px;
+      margin-left: 4px;
+      height: 10px;
+      cursor: pointer;
+    }
+
+    &-delete:hover {
+      font-size: 10pt;
+      color: @red-1;
+      margin-top: 2px;
+      margin-left: 4px;
+      height: 10px;
+      cursor: pointer;
+    }
+
+    &-content {
+      margin-left: 6px;
+      display: flex;
+      flex-direction: column;
+
+      &-title {
+        font-size: @font-m;
+        color: @orange-5;
+      }
+
+      &-div {
+        display: flex;
+        flex-grow: 1;
+      }
+
+      &-desc {
+        font-size: @font-s;
+        color: @grey-2;
+      }
+    }
+  }
+}
+.abs-download-file-text {
+  display: flex;
+  flex-direction: row;
+  height: 60px;
+  align-items: center;
+  padding-left: 18px;
+  padding-right: 20px;
+  cursor: pointer;
+  &:hover {
+    background: @grey-7;
+  }
+  .abs-file-text { 
+    &-image {
+      font-size: @font-40;
+      &-pdf {
+        color: @red-1;
+      }
+
+      &-xls {
+        color: @green-2;
+      }
+    }
+    &-content-title {
+      margin-left: 14px;
+      color: @abs-link-color;
+      font-size: @font-m;
+
+      &:hover {
+        color: @abs-link-hover-color;
+      }
+    }
+  }
+}

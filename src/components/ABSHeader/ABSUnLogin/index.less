@@ -1,0 +1,27 @@
+@import "../../../styles/theme/default.less";
+
+.abs-header-right .abs-unlogin {
+  float: right;
+  margin: 0 60px;
+  height: 60px;
+  line-height: 60px;
+  .btn-logion{
+    margin-right: 10px;
+  }
+  .btn-register {
+    .ant-btn-default {
+      background: @abs-home-header-register-color;
+      border-color: @abs-home-header-register-color;
+      &:hover {
+        background: @abs-home-header-register-hover-color;
+        border-color: @abs-home-header-register-hover-color;
+      }
+    }
+  }
+}
+
+.abs-login-modal {
+  .ant-modal-body {
+    padding: 0 !important;
+  }
+}

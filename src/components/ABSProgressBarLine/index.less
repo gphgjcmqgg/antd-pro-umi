@@ -1,0 +1,78 @@
+@import '../../styles/theme/default.less';
+.abs-progress-bar-line {
+  .ant-progress-line {
+    display: inline-block;
+  }
+  .ant-progress {
+    .ant-progress-outer {
+      margin: 0;
+      padding: 0;
+
+      .ant-progress-inner {
+        background-color: @grey-7;
+
+        .ant-progress-bg {
+          background-color: @orange-1;
+        }
+      }
+    }
+  }
+  &-text {
+    font-size: @font-m;
+    color: @orange-1;
+    vertical-align: baseline;
+    line-height: 18px;
+    letter-spacing: 0.6px;
+    display: inline-block;
+    &-percent {
+      font-size: @font-xl;
+      font-weight: bold;
+      letter-spacing: 0.6px;
+    }
+    &-info {
+      color: @grey-2;
+      margin-left: 8px;
+      margin-right: 5px;
+    }
+  }
+  &.abs-progress-bar-line-feed {
+    .ant-progress-line {
+      display: block;
+    }
+    .abs-progress-bar-line{
+      &-text {
+        display: block;
+        margin-top: 10px;
+        text-align: center;
+        line-height: 20px;
+
+        &-percent {
+          font-size: @font-xxl;
+          padding: 0;
+        }
+
+        &-info {
+          color: @grey-2;
+          text-align: center;
+        }
+      }
+    }
+    
+  }
+
+  &.abs-progress-bar-line-single {
+    .ant-progress {
+      .ant-progress-outer {
+        .ant-progress-inner {
+          vertical-align: top;
+          background-color: transparent;
+
+          .ant-progress-bg {
+            background-color: @green-11;
+            height: 4px !important;
+          }
+        }
+      }
+    }
+  }
+}

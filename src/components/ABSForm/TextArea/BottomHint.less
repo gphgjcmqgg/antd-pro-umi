@@ -1,0 +1,17 @@
+@import '../../../styles/theme/default.less';
+
+.bottom-hint-container {
+  position: absolute;
+  bottom: 1px;
+  right: 6px;
+  left: 1px;
+  background: #444c58;
+  height: 24px;
+  width: calc(~'100% - 19px');
+  .textarea-bottom-hint {
+    color: @abs-textarea-bottom-hint-color;
+    position: absolute;
+    right: 0;
+    bottom: 6px;
+  }
+}

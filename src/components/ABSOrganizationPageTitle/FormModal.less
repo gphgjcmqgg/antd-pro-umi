@@ -1,0 +1,63 @@
+@import '../../styles/theme/default.less';
+.organization-modal {
+  width: 100%;
+  &-content {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0 !important;
+  }
+  &-title {
+    color: @red-4;
+    font-size: @font-m;
+  }
+  &-comment {
+    margin: @abs-pricing-modal-content-margin-bottom 0;
+  }
+  &-files {
+    margin-top: @abs-pricing-modal-content-margin-bottom  !important;
+  }
+  &-logo {
+    display: flex;
+    flex-direction: column;
+    &-info {
+      padding-top: 14px;
+      color: @red-4;
+      font-size: @font-s;
+    }
+  }
+  &-input {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    .abs-input .ant-input {
+      height: 30px;
+    }
+    &-name {
+      width: 70px;
+      color: @abs-pricing-modal-title-color;
+      font-size: @abs-pricing-modal-title-font;
+      margin-right: @abs-pricing-title-margin-left;
+      padding: @abs-pricing-modal-title-padding 0;
+      position: relative;
+      .organization-base-title-star{
+        color: @red-6;
+        margin-right: 2px;
+        position: absolute;
+        top: 9px;
+      }
+      .organization-base-title-text {
+        padding-left: 8px;
+        word-break: break-all;
+      }
+    }
+    &-content {
+      width: calc(~"100% - 30px");
+      .abs-input {
+        margin-bottom: @abs-pricing-modal-content-margin-bottom;
+      }
+      .ant-input {
+        height: 30px;
+      }
+    }
+  }
+}

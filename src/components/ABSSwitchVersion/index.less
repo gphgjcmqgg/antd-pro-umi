@@ -1,0 +1,38 @@
+@import '../../styles/theme/default.less';
+
+.abs-switch-version {
+  position: fixed;
+  top: 558px;
+  width: 48px;
+  height: 70px;
+  right: 0;
+  color: @abs-switch-version-color;
+  background-color: @abs-switch-version-bg;
+  box-shadow: 0 8px 8px 0 rgba(0,0,0,0.50);
+  border-radius: 2px;
+  z-index: 4;
+  &-icon {
+    position: absolute;
+    right: 9px;
+    top: 7px;
+    font-size: 10px;
+    color: @abs-switch-version-color;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  &-text {
+    position: absolute;
+    margin-left: 3px;
+    line-height: 19px;
+    font-size: 14px;
+    width: 30px;
+    bottom: 12px;
+    left: 8px;
+    right: 8px;
+    cursor: pointer;
+    & > a {
+      text-decoration: none;
+      color: @abs-switch-version-color;
+    }
+  }
+}

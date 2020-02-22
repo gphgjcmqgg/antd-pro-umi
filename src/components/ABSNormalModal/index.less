@@ -1,0 +1,71 @@
+@import "../../styles/theme/default.less";
+
+.abs-normal-modal {
+  .abs-form-attachment{
+    .modal{
+      float: left;
+    }
+    .abs-btn{
+      float: right;
+    }
+  }
+
+  .abs-input-error {
+    font-size: 14px;
+    color: @red-1;
+  }
+
+  .abs-form-title {
+    padding: 20px 0;
+  }
+
+  .abs-form {
+    background-color: @grey-11;
+    height: 94%;
+  }
+
+  .fist-form-feedback {
+    .ant-btn-danger {
+      background-color: @grey-3 ;
+      border-color: @grey-3 ;
+    }
+    .heard-view {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .ant-input-affix-wrapper .ant-input:not(:last-child) {
+        padding-right: 30px;
+        background-color: @grey-9;
+        color: aliceblue;
+      }
+      .ant-input-affix-wrapper .ant-input-prefix :not(.anticon),
+      .ant-input-affix-wrapper .ant-input-suffix :not(.anticon) {
+        line-height: 1;
+        color: @grey-2;
+      }
+    }
+    .input-view {
+      .input-childen {
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+        color: @grey-2;
+      }
+    }
+    .left-view {
+      width: 75px;
+    }
+    .left-view-left {
+      display: flex;
+      flex-direction: row;
+    }
+    .abs-input .ant-input {
+      padding-top: 10px;
+      line-height: 20px;
+      padding-bottom: 50px;
+    }
+    .icon-color {
+      color: @red-1;
+    }
+  }
+}

@@ -1,0 +1,93 @@
+@import '../../styles/theme/default.less';
+
+.abs-product-page-title {
+  display: flex;
+  justify-content: space-between;
+  background-color: @abs-page-title-bg;
+  padding-top: 16px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  height: 80px;
+  border-bottom: 1px solid @abs-page-title-bottom-border-color;
+  .abs-product-page-content {
+    // border-left: 8px solid @abs-page-title-border-color;
+    display: -ms-flexbox;
+    display: flex;
+    // padding-left: 12px;
+    height: 40px;
+    flex-direction: column;
+    width: 100%;
+    &-title {
+      // display: -ms-flexbox;
+      // display: flex;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      line-height: 24px;
+      height: 20px;
+      &-name {
+        color: @abs-page-title-content-title-color;
+        font-size: @font-l;
+        font-weight: bold;
+        margin-right: 20px;
+        display: inline-block;
+      }
+      &-vote {
+        margin-left: 10px;
+        display: inline-block;
+      }
+      &-tag {
+        margin-top: -5px;
+        display: inline-block;
+        // padding-left: 20px;
+        .ant-tag {
+          border-radius: 0;
+          &:hover {
+          	opacity: 1;
+          }
+        }
+      }
+    }
+    .abs-header-subtitle {
+      padding-top: 12px;
+    }
+    // &-subtitle {
+    //   // color: @abs-page-title-content-subtitle-color;
+    //   // font-size: @font-s;
+    //   display: -ms-flexbox;
+    //   display: flex;
+    //   -ms-flex-direction: row;
+    //   flex-direction: row;
+    //   padding-top: 2px;
+    //   height: 20px;
+    //   &-item, 
+    //   .abs-label-value-list {
+    //     display: inline-block;
+    //     margin-right: 12px;
+    //   }
+    // }
+  }
+  .abs-modal {
+    display: none;
+  }
+  .abs-product-page-buttons {
+    display: flex;
+    flex-direction: row;
+    float: right;
+    
+    &-less-padding {
+      .abs-btn {
+        .ant-btn {
+          padding: 0 10px;
+        }
+      }
+    }
+  }
+  .abs-hidden{
+    visibility: hidden;
+  } 
+}
+.abs-product-normal-modal.abs-modal-default {
+  .ant-modal-body .abs-modal-body-scrollbar{
+    padding-top: 0;
+  }
+}

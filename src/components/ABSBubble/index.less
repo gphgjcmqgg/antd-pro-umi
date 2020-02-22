@@ -1,0 +1,60 @@
+@import "../../styles/theme/default.less";
+.ant-tooltip {
+  max-width: initial;
+  .ant-tooltip-inner {
+    padding: 8px 12px;
+    background: rgba(33,38,45,0.98);
+    border-radius: 2px;
+    border: 1px solid @abs-bubble-border;
+    .ps .ps__rail-x:hover, .ps .ps__rail-y:hover, .ps .ps__rail-x:focus, .ps .ps__rail-y:focus, .ps .ps__rail-x.ps--clicking, .ps .ps__rail-y.ps--clicking{
+      background-color:transparent;
+    }
+  }
+}
+.ant-tooltip-placement-top, 
+.ant-tooltip-placement-topLeft, 
+.ant-tooltip-placement-topRight,
+.ant-tooltip-placement-bottom,
+.ant-tooltip-placement-bottomLeft,
+.ant-tooltip-placement-bottomRight,
+.ant-tooltip-placement-left,
+.ant-tooltip-placement-leftBottom,
+.ant-tooltip-placement-leftTop,
+.ant-tooltip-placement-right,
+.ant-tooltip-placement-rightTop,
+.ant-tooltip-placement-rightBottom {
+  .ant-tooltip-arrow {
+    border-top-color: rgba(33,38,45,0.98);
+    border-bottom-color: rgba(33,38,45,0.98);
+    bottom: 4px;
+    transform: rotate(-45deg);
+    border-color: transparent;
+    border-left: 1px solid @abs-bubble-border;
+    border-bottom: 1px solid @abs-bubble-border;
+    width: 12px;
+    height: 12px;
+    background: @grey-15;
+  }
+}
+
+.ant-tooltip-placement-bottom,
+.ant-tooltip-placement-bottomLeft,
+.ant-tooltip-placement-bottomRight {
+  .ant-tooltip-arrow {
+    transform: rotate(132deg);
+  }
+}
+.ant-tooltip-placement-right,
+.ant-tooltip-placement-rightTop,
+.ant-tooltip-placement-rightBottom {
+  .ant-tooltip-arrow {
+    transform: rotate(45deg);
+  }
+}
+.ant-tooltip-placement-left,
+.ant-tooltip-placement-leftTop,
+.ant-tooltip-placement-leftBottom {
+  .ant-tooltip-arrow {
+    transform: rotate(-132deg);
+  }
+}

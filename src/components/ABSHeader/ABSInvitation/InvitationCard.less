@@ -1,0 +1,48 @@
+@import "../../../styles/theme/default.less";
+
+.abs-invitation-card {
+  padding-right: 10px;
+  padding-left: 10px;
+  &-header {
+    padding-top: 35px; 
+    text-align: center;
+    &-title {
+      color: @yellow-1;
+      padding: 10px 0 14px 0;
+    }
+  }
+  .abs-form-card {
+    background-color: @grey-7-rgba-3;
+    &-title {
+      .abs-icon-tooltip {
+        margin-left: 6px;
+      }
+    }
+    .abs-invitation-content-input {
+      height: 180px;
+      width: 100%;
+      .modal-enclosure_desc {
+        position: absolute;
+        left: 0;
+        top: 20px;
+      }
+      .abs-upload-file-text {
+        position: absolute;
+        left: 0px;
+        top: 35px;
+        .abs-file-text-content {
+          text-align: left;
+        }
+        .abs-icon {
+          font-size: @font-l;
+        }
+        .abs-file-text-delete {
+          font-size: @font-m;
+        }
+        .abs-file-text-content-desc {
+          display: none;
+        }
+      }
+    }
+  }
+}

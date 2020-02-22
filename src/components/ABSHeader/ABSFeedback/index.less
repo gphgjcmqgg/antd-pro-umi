@@ -1,0 +1,17 @@
+@import "../../../styles/theme/default.less";
+
+.abs-feedback{
+  width: 25px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-size: @abs-feedback-font-size;
+  .abs-icon-tooltip .abs-icon {
+    font-size: 18px;
+    color: @abs-feedback-color-help;
+    &:hover{
+      cursor: pointer;
+      color: @abs-feedback-hover-color-help;
+    }
+  }
+}

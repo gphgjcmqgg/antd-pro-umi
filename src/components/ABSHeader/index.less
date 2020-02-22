@@ -1,0 +1,70 @@
+@import "../../styles/theme/default.less";
+
+.abs-header{
+	width:100%;
+	height: 60px;
+	min-height: 60px;
+	z-index: 100;
+	background-color: @abs-header-bg-color;
+	border-bottom:1px solid @abs-header-border-color;
+	display: flex;
+	.abs-header-logo {
+		padding: 14px 20px;
+		position: relative;
+		.abs-Christmas-hat{
+			position: absolute;
+			top: 7px;
+			left: 4px;
+			width: 36px;
+			height: 32px;
+		}
+		.abs-header-logo-img {
+			width: 107px;
+			height: 32px;
+		}
+		.abs-badge {
+			position: relative;
+			.abs-reddot {
+				position: absolute;
+				top: -1px;
+				right: -5px;
+			}
+		}
+		&-tag {
+			position: absolute;
+			top: 22px;
+			right: -16px;
+			.ant-tag {
+				margin: 0;
+				line-height: 16px;
+				height: 18px;
+				border-radius: 0;
+				&:hover {
+					opacity: 1;
+				}
+			}
+			[ant-click-animating-without-extra-node] {
+				position: inherit;
+			}
+		}
+	}
+	.abs-menu {
+		margin-left: 28px;
+	}
+	.abs-header-right {
+		flex: 1;
+    min-width: 480px;
+		.abs-person,
+		.abs-search,
+		.abs-follow,
+		.abs-notice,
+		.abs-feedback,
+		.abs-internal-message,
+		.abs-invitation {
+				float: right;
+		}
+		.abs-search {
+			margin: 15px 7px;
+		}
+	}
+}

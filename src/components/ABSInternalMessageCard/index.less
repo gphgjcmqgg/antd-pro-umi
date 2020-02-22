@@ -1,0 +1,159 @@
+@import "../../styles/theme/default.less";
+
+.abs-notice-list {
+  height: 80px;
+  width: 100%;
+  border-bottom: @grey-15 solid 1px;
+  padding: 0 10px;
+  display: flex;
+  position: relative;
+
+  &:hover {
+    background: @grey-7;
+  }
+
+  .abs-avatar {
+    padding: 20px 0;
+    cursor: default;
+  }
+
+  .abs-notice-btn {
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    color: @grey-2;
+    font-size: 24px;
+    cursor: pointer;
+
+    &:hover {
+      color: @orange-1;
+    }
+  }
+
+  .abs-notice-btn-active {
+    color: @orange-1;
+  }
+
+  .abs-notice {
+    &-detail {
+      display: table;
+      padding-left: 12px;
+    }
+
+    &-content {
+      display: table-cell;
+      height: 80px;
+      vertical-align: middle;
+      line-height: 1;
+
+      .abs-notice-date {
+        position: absolute;
+        top: 24px;
+        right: 10px;
+        font-size: 12px;
+        color: @grey-2;
+      }
+
+      .abs-notice-name {
+        color: @yellow-1;
+        font-weight: bold;
+      }
+
+      .abs-notice-title {
+        color: @grey-2;
+        font-size: 12px;
+        margin-top: 8px;
+        width: 180px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 16px;
+      }
+
+      .abs-notice-title-unread {
+        color: @orange-1;
+      }
+
+      .select-none {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+    }
+  }
+  .abs-notice-avatar-box {
+    display: inline-block;
+    position: relative;
+    .abs-message-count {
+      position: absolute;
+      top: 20px;
+      right: 0;
+      background: @red-1;
+      border-radius: 50%;
+      width: 10px;
+      height: 10px;
+      border: 1px solid @grey-9;
+      z-index: 2;
+    }
+  }
+}
+
+.high-light-list {
+  background: @grey-9 !important;
+  &.abs-message-read {
+    .abs-notice-content {
+      .abs-notice-date,
+      .abs-notice-name,
+      .abs-notice-title {
+        color: @white-1;
+        font-weight: inherit;
+      }
+    }
+  }
+}
+
+.tooltip-item-operation {
+  .ant-tooltip-arrow {
+    position: absolute;
+    top: 60px;
+    left: 50px;
+    z-index: 2;
+  }
+
+  .ant-tooltip-inner {
+    position: absolute;
+    top: 65px;
+    left: -22px;
+    width: 100px;
+    padding: 10px 0;
+
+    .abs-ant-icon-text {
+      height: 32px;
+      line-height: 32px;
+      padding-left: 12px;
+      padding-right: 12px;
+
+      &:hover {
+        background: @grey-7;
+      }
+    }
+  }
+}
+
+.abs-message-read {
+  background: rgba(55, 65, 80, 0.2);
+
+  .abs-notice-content {
+    .abs-notice-name {
+      color: @grey-2;
+      font-weight: inherit;
+    }
+  }
+}
+
+.abs-notice-detail {
+  .abs-avatar {
+    cursor: default;
+  }
+}

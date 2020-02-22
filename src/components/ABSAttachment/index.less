@@ -1,0 +1,42 @@
+@import '../../styles/theme/default.less';
+
+.abs-attachment {
+  position: relative;
+  margin-top: 8px;
+  cursor: pointer;
+  .item-file-image {
+    &-word {
+      color: @blue-22;
+    }
+    &-xls {
+      color: @green-6;
+    }
+    &-pdf {
+      color: @red-11;
+    }
+    &-ppt {
+      color: @orange-7;
+    }
+    &-zip {
+      color: @red-12;
+    }
+    &-pic {
+      color: @yellow-5;
+    }
+    &-common-type {
+      color: @grey-27;
+    }
+  }
+  .abs-icon {
+    font-size: 16px;
+    padding-right: 5px;
+  }  
+  
+  span {
+    color: @abs-expert-file-color;
+    &:hover {
+      color: @abs-expert-file-hover-color;
+    }
+  }
+
+}

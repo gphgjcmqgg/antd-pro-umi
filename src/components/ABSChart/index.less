@@ -1,0 +1,109 @@
+@import "../../styles/theme/default.less";
+
+@chart-prefix-cls: ~"@{abs-prefix}-chart";
+
+.@{chart-prefix-cls} {
+    // 图表基础样式
+    height: 400px;
+    position: relative;
+}
+
+.abs-chart-title {
+    font-family: @abs-font-family;
+    font-weight: bold;
+    text-align: center;
+    font-size: 14px;
+    color: #FFE2B2;
+    letter-spacing: 0.61px;
+    padding: 20px 0;
+}
+
+.highcharts-title {
+    top: 0 !important;
+    tspan {
+    font-family: @abs-font-family;
+    font-weight: bold;
+    }
+}
+
+.abs-loading {
+    left: calc(50%)
+}
+
+.abs-no-content {
+    padding: 100px  0 !important;
+}
+
+.chart-magnifier {
+    &-icon {
+        position: absolute;
+        right: 20px;
+        top: 18px;
+        z-index: 3;
+        cursor: pointer;
+    }
+    &-height {
+        height: 500px;
+    }
+}
+
+.select-all {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+.abs-chart-excel-download {
+    position: absolute;
+    right: 57px;
+    top: 16px;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.download-container {
+    margin-top: 5px;
+    &-img-excel {
+        opacity: 100%;
+        color: @abs-download-excel-color;
+        padding-left: 12px;
+    }    
+    &-img-png {
+        opacity: 100%;
+        color: @abs-download-png-color;
+        padding-left: 12px
+    }
+    .abs-ant-icon-text {
+        line-height: 14px;
+        padding-top:9px;
+        letter-spacing: 0.61px;
+        height: 32px;
+        &:hover {
+            background-color: @abs-download-item-hover-color;
+        }
+    }
+}
+
+@import '../../styles/theme/default.less';
+
+.tooltip-container {
+    .ant-tooltip-inner {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+.enlarge-container {
+    .ant-modal-body {
+        .abs-modal-body-nofooter-scrollbar {
+            padding: 40px 32px 0;
+        }
+    }
+}
+
+.no-chart-data {
+    border: 1px solid @abs-panel-border-color;
+    width: 100%;
+    min-height: 400px;
+}
+

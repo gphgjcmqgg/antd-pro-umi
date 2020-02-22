@@ -1,0 +1,34 @@
+@import '../../styles/theme/default.less';
+
+.abs-barrage {
+  display: flex;
+  min-width: 198px;
+  height: 32px;
+  border-radius: 20px;
+  margin-right: 40px;
+  background-color: @abs-barrage-bg;
+  padding: 9px 12px;
+  align-items: center;
+  &:last-child {
+    margin-right: 0;
+  }
+  &-avatar {
+    margin-right: 6px;
+  }
+  &-name {
+    color: @abs-barrage-name-color;
+    font-size: @font-m;
+    line-height: @font-m;
+    margin-right: 3px;
+    white-space: nowrap;
+  }
+  &-description {
+    font-size: @font-s;
+    line-height: @font-s;
+    white-space: nowrap;
+    color: @abs-barrage-description-color;
+  }
+  .abs-href {
+    display: flex;
+  }
+}

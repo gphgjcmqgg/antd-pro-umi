@@ -1,0 +1,84 @@
+@import '../../styles/theme/default.less';
+
+.abs-double-date-picker {
+  .abs-calendar {
+    display: inline-block;
+    margin-bottom: 10px;
+    .ant-calendar-picker-input {
+      width: 110.5px;
+      height: 30px;  
+      font-size: 12px;
+      border: 1px solid @abs-double-date-picker-border-color;
+      font-family: @abs-font-family;
+    }
+
+    .ant-calendar-picker-icon {
+      font-family: 'font-cop';
+      font-size: 10px;
+      margin-top: -6px;
+      padding-left: 3px;
+    }
+  }
+  
+  .abs-double-date-picker-label-required {
+    color: @abs-double-date-picker-required-label-color;
+    margin-right: 2px;
+  }
+
+  &.abs-double-date-picker-large {
+    .abs-calendar .ant-calendar-picker-input {
+      width: 200px;
+      height: 48px;
+      font-size: @font-m;
+      cursor: pointer;
+      font-family: @abs-font-family;
+    }
+  
+   
+  }
+}
+
+.ant-calendar {
+  .ant-calendar-picker-container {
+    &.abs-double-date-picker-dropdown-large {
+      .ant-calendar-input-wrap {
+        height: 48px;
+        .ant-calendar-input {
+          height: 48px;
+          font-family: @abs-font-family;
+        }
+      }
+    }
+    .ant-calendar-input-wrap, .ant-calendar-input {
+      border: none;
+      width: 110px;
+      height: 30px;
+      font-family: @abs-font-family;
+    }
+  }
+
+  .ant-calendar-disabled-cell .ant-calendar-date {
+    color: @abs-double-date-picker-disabled-cell-color;
+    background: @abs-double-date-picker-disabled-cell-bg-color;
+    &:hover {
+      background: @abs-double-date-picker-disabled-cell-bg-color;
+    }
+  }
+}
+
+.ant-calendar-picker-clear, .ant-calendar-picker-icon {
+  width: 12px;
+  // margin-top: -4px;
+}
+
+.ant-calendar-picker-container {
+  &.abs-double-date-picker-dropdown-large {
+    .ant-calendar-input-wrap {
+      height: 48px;
+      .ant-calendar-input {
+        height: 48px;
+        font-family: @abs-font-family;
+      }
+    }
+  }
+}

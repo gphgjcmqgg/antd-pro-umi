@@ -1,0 +1,59 @@
+@import '../../styles/theme/default.less';
+.abs-timeline {
+  .ant-timeline-item {
+    .abs-time-dot {
+      border: 0;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .abs-time-inner-dot {
+        background-color: @abs-anchor-point-default-item-color;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+      }
+      .abs-dot-date {
+        display: inline-block;
+        position: absolute;
+        left: -65px;
+        top: -3px;
+        width: 60px;
+        text-align: right;
+        &-title {
+          color: @abs-timeline-dot-title-color;
+          font-size: @abs-timeline-dot-title-font;
+          font-weight: bold;
+          letter-spacing: 0.6px;
+        }
+        &-subtitle {
+          color: @abs-timeline-dot-subtitle-color;
+          font-size: @abs-timeline-dot-subtitle-font;
+          letter-spacing: 0.6px;
+          margin-top: 5px;
+        }
+      }
+    }
+    &:hover {
+      .abs-time-dot {
+        border: 1px solid @abs-anchor-point-active-item-bg-color;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .abs-time-inner-dot {
+          background-color: @abs-anchor-point-active-item-bg-color;
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}

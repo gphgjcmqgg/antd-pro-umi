@@ -1,0 +1,46 @@
+@import '../../styles/theme/default.less';
+
+.abs-login-content-otherway {
+  width: 182px;
+  margin: 0 auto;
+  margin-top: 80px;
+  &-abslink {
+    margin-left: 26px;
+  }
+  &-logo {
+    float: left;
+    cursor: pointer;
+    text-align: center;
+    img {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 12px;
+    }
+    span {
+      display: block;
+      color: @abs-login-title-color;
+      letter-spacing: 0.61px;
+    }
+  }
+}
+
+.wechat-modal,
+.abslink-modal {
+  .modal-otherway {
+    text-align: center;
+    &-title {
+      margin-bottom: 24px;
+      color: @abs-login-modal-otherway-title-color;
+    }
+    img {
+      width: 228px;
+    }
+    &-description {
+      margin-top: 14px;
+    }
+    &-iframe {
+      height: 300px;
+      width: 228px;
+    }
+  }
+}

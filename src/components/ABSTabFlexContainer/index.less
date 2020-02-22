@@ -1,0 +1,27 @@
+@import "../../styles/theme/default.less";
+.abs-tab-flex-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  &-content {
+    flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    height: 100%;
+    width: 1px;
+  }
+  &-tab {
+    background-color: @black-8;
+
+    border-width: 0 0 0 1px;
+    border-style: solid;
+    border-color: @grey-18;
+
+    position: relative;
+    height: 100%;
+    width: 280px;
+    padding-top: 14px;
+    .ant-tabs {
+      height: 100%;
+    }
+  }
+}

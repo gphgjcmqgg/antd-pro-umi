@@ -1,0 +1,25 @@
+@import '../../styles/theme/default.less';
+.abs-label-list-container{
+  .abs-label-form-item{
+    margin-bottom: 14px;
+    .abs-label{
+      display: inline-block;
+      width:68px;
+      color: @abs-filterPanelHor-text;
+    }
+    .abs-form-item{
+      display: inline-block;
+      .abs-input{
+        display: inline-block;
+        margin-bottom: 0;
+        width: 100%;
+        .ant-input{
+          width: 100%;
+        }
+      }
+    }
+  }
+  div.abs-label-form-item:nth-last-of-type(1){
+    margin-bottom: 0;
+  }
+}

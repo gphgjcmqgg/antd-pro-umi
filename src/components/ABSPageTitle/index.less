@@ -1,0 +1,39 @@
+@import '../../styles/theme/default.less';
+
+@prefixCls: ~'abs-header-page';
+
+.abs-header-page {
+  display: flex;
+  justify-content: space-between;
+  background-color: @abs-page-title-bg;
+  height: 48px;
+  width: 100%;
+  padding-left: 26px;
+  border-bottom: 1px solid @abs-page-title-bottom-border-color;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  &-content {
+    border-left: 8px solid @abs-page-title-border-color;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    height: 20px;
+    line-height: 18px;
+    &-title {
+      color: @white-1;
+      font-size: @font-l;
+      // font-weight: bold;
+    }
+    &-subtitle {
+      color: @abs-page-title-content-subtitle-color;
+      font-size: @font-s;
+      margin-left: 20px;
+    }
+    
+  }
+  &-buttons {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+}

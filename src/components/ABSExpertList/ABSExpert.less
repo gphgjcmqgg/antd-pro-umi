@@ -1,0 +1,203 @@
+@import '../../styles/theme/default.less';
+.abs-expert {
+  display: flex;
+  position: relative;
+  padding-left: 12px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: 100px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+  .action-buttons-container();
+  &.abs-expert-card-hover-bg {
+    background-color: @abs-expert-hover-bg-color;
+  }
+  .abs-mix() {
+    font-size: @font-s;
+    .abs-expert-description {
+      display: table-cell;
+      height: 60px;
+      padding-left: 12px;
+      vertical-align: middle;
+      line-height: 1;
+      .abs-expert-info {
+        line-height: initial;
+        .abs-expert-name {
+          color: @abs-expert-list-name-color;
+          font-size: @font-m;
+          &:hover {
+            color: @abs-expert-name-hover-color;
+          }
+        }
+        .abs-tag{
+          margin-top: -2px;
+        }
+      }
+    }
+  }
+  .abs-dynamic {
+    .abs-mix();
+    .abs-expert-dynamic {
+      margin-top: 8px;
+      color: @abs-expert-dynamic-color;
+    }
+    .abs-expert-content {
+      margin-top: 4px;
+      color: @abs-expert-content-color !important;
+      width: 170px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .abs-expert-company {
+      color: @abs-expert-content-color !important;
+    }
+    .abs-expert-remove-button {
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      transition: all 0.2s ease;
+      &:hover {
+        color: @abs-expert-remove-button-hover-color;
+      }
+    }
+    .abs-expert-next-button {
+      position: absolute;
+      right: 12px;
+      top: -28px;
+      .abs-icon-tooltip .abs-icon {
+        font-size: 18px;
+        color: #999999;
+      }
+      .abs-icon-tooltip .abs-icon:hover{
+        font-size: 18px;
+        color: #FFAB2E;
+      }
+    }
+  }
+  .abs-card {
+    display: table;
+    .abs-mix();
+    .abs-expert {
+      &-name,
+      &-company,
+      &-content {
+        text-overflow: ellipsis;
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 170px;
+        color: @abs-expert-content-color;
+      }
+    }
+    .abs-expert-company {
+      margin-top: 8px;
+    }
+    .abs-expert-content {
+      margin-top: 4px;
+    }
+  }
+
+  .abs-message-card {
+    padding-top: 16px;
+    .abs-expert-description {
+      position: relative;
+      .abs-message-info { 
+        color: @yellow-1;
+        margin-bottom: 2px;
+        font-size: @font-l;
+        // font-weight: bold;
+        line-height: 20px;
+        width: 125px;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      .abs-paragraph {
+        width: 125px;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        font-size: @font-s;
+        margin-top: 0;
+      }
+      .abs-message-count-info {
+        line-height: initial;
+        position: absolute;
+        right: -110px;
+        bottom: 0;
+        .abs-comment {
+          display: inline;
+        }
+      }
+    }
+    
+  }
+
+  .expert-info-style() {
+    width: 279px;
+    margin-right: 10px;
+    background-color: @grey-15;
+    margin-bottom: 10px;
+    border-radius: 2px;
+    &:hover {
+      background-color: #374150;
+    }
+
+    .abs-expert-info {
+      display: flex;
+      width: 170px;
+    }
+
+    .abs-card .abs-expert-name {
+      margin-right: 8px;
+      width: auto;
+      max-width: 200px;
+    }
+
+    .abs-expert-follow-button {
+      color: @abs-link-color;
+    }
+    .action-buttons-container();
+  }
+
+  .action-buttons-container() {
+    .abs-expert-action-buttons-container {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      .abs-expert-action-button {
+        display: inline-block;
+        margin-left: 8px;
+        &:hover {
+          color: @abs-link-hover-color;
+        }
+      }
+    }
+  }
+  &.abs-expert-middle {
+    height: 100px;
+    padding: 20px 12px;
+    .expert-info-style();
+  }
+  &.abs-expert-large {
+    height: 100px;
+    padding: 20px 12px;
+    .expert-info-style();
+  }
+  .abs-expert-action-buttons-container{
+    .abs-expert-cancel-follow-button {
+      color: @abs-expert-cancel-button;
+      &:hover{
+        color: @abs-expert-cancel-button!important;
+      }
+    }
+  } 
+  .abs-avatar {
+    .expert-icon-follow-icon {
+      color: @abs-expert-follow-each-other-icon-color;
+    }
+  }
+}

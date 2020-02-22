@@ -1,0 +1,29 @@
+@import '../../styles/theme/default.less';
+.abs-timeline {
+  .ant-timeline-item {
+    .abs-timeline-box {
+      .abs-tag {
+        margin-bottom: 16px;
+        .ant-tag {
+          border-radius: 0;
+          padding: 6px 12px;
+          font-weight: bold;
+          font-size: @font-l;
+          line-height: @font-l;
+          letter-spacing: 0.7px;
+          height: auto;
+          cursor: inherit;
+          &:hover {
+            opacity: 1;
+          }
+          &:after {
+            border: 0;
+          }
+        }
+      }
+      .abs-paragraph {
+        line-height: 28px;
+      }
+    }
+  }
+}

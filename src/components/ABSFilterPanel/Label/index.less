@@ -1,0 +1,57 @@
+@import "../../../styles/theme/default.less";
+
+.abs-filter-label {
+  margin-bottom: 8px;
+  font-size: @font-m;
+  color: @yellow-1;
+}
+.abs-filter-trading-circle {
+  &-sub-title {
+    color: @blue-3;
+    font-size: @font-m;
+    &-ofr {
+      padding-left: 17px;
+    }
+  }
+  &-input {
+    display: inline-block;
+    margin-left: 4px;
+    .ant-input {
+       width: 52px;
+       height: 30px !important;
+       text-align: center;
+     }
+  }
+  &-symbol {
+    width: 30px;
+    height: 29px;
+    border-radius: 2px;
+    background-color: @blue-1;
+    margin-left: 4px;
+    display: inline-block;
+    line-height: 29px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition-delay: 0s;
+    &:hover,
+    &:focus {
+      background-color: @blue-2;
+    }
+  }
+  .abs-single-input {
+    display: inline-block;
+    vertical-align: -1px;
+    .abs-input {
+      margin-left: 4px;
+      .ant-input {
+        width: 52px;
+        height: 30px !important;
+        text-align: center;
+      }
+    }
+  }
+}

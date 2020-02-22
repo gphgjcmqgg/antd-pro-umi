@@ -1,0 +1,67 @@
+@import "../../../styles/theme/default.less";
+
+.abs-invitation {
+  width: 25px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-size: @abs-feedback-font-size;
+  margin-right: 8px;
+
+  &-icon {
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+
+    .abs-icon-tooltip .abs-icon {
+      font-size: 18px;
+      color: @abs-feedback-color-help;
+
+      &:hover {
+        cursor: pointer;
+        color: @abs-feedback-hover-color-help;
+      }
+    }
+  }
+}
+
+.abs-invitation-modal {
+
+  // transform-origin: 100% 48px !important;
+  &.abs-modal-default {
+    .ant-modal-content {
+      overflow: hidden;
+    }
+
+    .ant-modal-body {
+      .abs-modal-body-nofooter-scrollbar {
+        padding: 0;
+      }
+    }
+  }
+
+  &.ant-modal.zoom-leave {
+    -webkit-animation-duration: 0.5s !important;
+    animation-duration: 0.5s !important;
+  }
+}
+
+.abs-invitation-header-title-info {
+  max-width: initial !important;
+
+  .abs-invitation-header-title-instructions {
+    padding: 12px 8px;
+
+    .abs-label-value {
+      margin-bottom: 8px;
+
+      &-title {
+        min-width: 0 !important;
+      }
+    }
+
+    .abs-comment {
+      margin-top: 16px;
+    }
+  }
+}

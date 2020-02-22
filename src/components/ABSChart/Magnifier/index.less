@@ -1,0 +1,89 @@
+@import "../../../styles/theme/default.less";
+
+.magnifierContainer {
+  background-color: rgb(24, 28, 35);
+  .chartFilter {
+    padding: 20px 0 14px;
+  }
+  .abs-col {
+    margin-bottom: @abs-rating-content-margin-bottom;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 20px;
+    &-label {
+      font-size: 14px;
+      font-weight: 500;
+      color: @yellow-1;
+      height: 30px;
+      line-height: 30px;
+      display: inline-block;
+      float: none;
+      margin-right: @abs-rating-title-margin-left;
+    }
+    &-content {
+      width: calc(~"100% - 92px") !important;
+      max-width: 276px;
+      margin-right: 20px;
+      display: inline-block;
+      .ant-select-selection {
+        width: 100%;
+      }
+    }
+    &-input {
+      width: calc(~"100% - 92px") !important;
+      max-width: 125px;
+      display: inline-block;
+      .ant-select-selection {
+        width: 100%;
+      }
+    }
+  }
+
+  .abs-input .ant-input {
+    width: 100%;
+    height: 30px;
+  }
+
+  .abs-col span {
+    margin: 0 5px;
+  }
+
+  .abs-chart-download {
+    position: absolute;
+    right: 52px;
+    top: 60px;
+    z-index: 100;
+    cursor: pointer;
+}
+
+  .download-container {
+    margin-top: 5px; 
+    &-img-png {
+        opacity: 100%;
+        color: @abs-download-png-color;
+        padding-left: 12px
+    }
+    .abs-ant-icon-text {
+        line-height: 14px;
+        padding-top:9px;
+        letter-spacing: 0.61px;
+        height: 32px;
+        &:hover {
+            background-color: @abs-download-item-hover-color;
+        }
+    }
+  }
+
+  .abs-calendar {
+    display: inline-block;
+    .ant-calendar-picker {
+      .ant-calendar-picker-input {
+        width: 125px;
+      }
+    }
+  }
+
+  .magnifier-datepicker {
+    margin-right: 10px;
+  }
+}

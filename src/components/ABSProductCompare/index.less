@@ -1,0 +1,37 @@
+.abs-product-compare {
+  display: block;
+  .abs-table {
+    .product-compare-title-button {
+      position: relative;
+      .abs-icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+        color: #999;
+        cursor: pointer;
+        &:hover {
+          color: #ffb146;
+        }
+      }
+    } 
+    table {
+      white-space: nowrap;
+      overflow-x: visible;
+      width: auto;
+    }
+    // .ant-table-body {
+    //   overflow-x: auto !important;
+    // }
+  }
+  .abs-security {
+    .abs-table .ant-table-bordered .ant-table-thead > tr > th,
+    .abs-table .ant-table-bordered .ant-table-tbody > tr > td {
+      &:nth-child(even) {
+        border-right: none;
+      }
+      &:nth-child(odd) {
+        border-left: none;
+      }
+    }
+  }
+}

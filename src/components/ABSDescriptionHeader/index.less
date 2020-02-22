@@ -1,0 +1,36 @@
+
+@import '../../styles/theme/default.less';
+
+.abs-description-header{
+  width: 100%;
+  height: 100%;
+  font-family: @abs-font-family;
+  &-title {
+    width: 100%;
+    height: 48px;
+    line-height: 48px;
+    background-color: @black-2;
+    border-bottom: 1px solid @grey-18;
+    font-size: @font-l;
+    color: @abs-font-color;
+    padding: 0 40px;
+    font-weight: bold;
+  }
+  &-content {
+    width: 100%;
+    height: calc(~"100% - 48px");
+    padding-left: 40px;
+    padding-top: 30px;
+    position: relative;
+  }
+  div.abs-description-content {
+    .abs-description-content-title {
+      margin-top: 30px;
+    }
+  }
+  div.abs-description-content:nth-of-type(1){
+    .abs-description-content-title{
+      margin-top: 0px;
+    }
+  }
+}

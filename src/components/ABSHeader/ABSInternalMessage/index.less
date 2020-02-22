@@ -1,0 +1,43 @@
+@import "../../../styles/theme/default.less";
+
+.abs-internal-message {
+  position: relative;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-size: @abs-follow-font-size;
+  .abs-icon-tooltip{
+    .abs-icon {
+      font-size: 18px;
+      color: @abs-feedback-color;
+      &:hover{
+        cursor: pointer;
+        color: @abs-feedback-hover-color;
+      }
+    }
+  }
+  .abs-message-count {
+    position: absolute;
+    top: 18px;
+    right: -3px;
+    background: @abs-bell-red-pointer;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+  }
+}
+.abs-header-internal-message-bell{
+  z-index: 999;
+  .ant-tooltip-content{
+    .ant-tooltip-arrow{
+      border-left: 1px solid @abs-bell-tooltip-border;
+      border-bottom: 1px solid @abs-bell-tooltip-border;
+      background: @abs-bell-tooltip-bg;
+    }
+    .ant-tooltip-inner{
+      background: @abs-bell-tooltip-bg;
+      border: 1px solid @abs-bell-tooltip-border;
+    }
+  }
+
+}

@@ -1,0 +1,15 @@
+@import "../../../styles/theme/default.less";
+.abs-progress-dot {
+  @radius: 5px;
+  width: @radius * 2;
+  height: @radius * 2;
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+  border-radius: @radius;
+  &-inactive {
+    background: @grey-7;
+  }
+  &-active {
+    background: @orange-1;
+  }
+}

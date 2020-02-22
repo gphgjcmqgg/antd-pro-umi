@@ -1,0 +1,41 @@
+@import '../../styles/theme/default.less';
+
+.abs-color {
+  color: @abs-color-font-color;
+  &-block {
+    width: 80px;
+    height: 75px;
+    display: inline-block;
+    margin-right: 10px;
+    padding-top: 17px;
+    border-radius: 2px;
+    div {
+      text-align: center;
+    }
+    &-border {
+      border: 1px solid @abs-color-card-border-color;
+    }
+    &-white {
+      color: @abs-color-font-color;
+    }
+    &-black {
+      color: @abs-color-font-color-black;
+    }
+  }
+  &-comment {
+    display: inline-block;
+    width: calc(~'100% - 100px');
+    vertical-align: top;
+    .ant-typography {
+      color: @abs-color-font-color;
+      margin-bottom: 0;
+      .ant-typography-expand {
+        color: @abs-color-comment-expant-color;
+        &:hover,
+        &:focus {
+          color: @abs-color-comment-expant-hover-color;
+        }
+      }
+    }
+  }
+}

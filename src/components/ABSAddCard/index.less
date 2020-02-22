@@ -1,0 +1,29 @@
+@import '../../styles/theme/default.less';
+
+.abs-add-card {
+  display: inline-block;
+  width: 279px;
+  height: 100px;
+  line-height: 100px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background-color: @abs-add-card-bg-color;
+  border-radius: 2px;
+  border: 1px dashed @abs-add-card-border-color;
+  cursor: pointer;
+  text-align: center;
+  // .abs-avatar {
+  //   display: inline-block;
+  // }
+  .abs-ant-icon-text {
+    color: @abs-add-card-text-color;
+    display: inline-block;
+    font-size: @abs-add-card-text-size;
+  }
+  &:hover {
+    border: 1px dashed @abs-add-card-hover-border-color;
+    .abs-ant-icon-text {
+      color: @abs-add-card-hover-text-color;
+    }
+  }
+}

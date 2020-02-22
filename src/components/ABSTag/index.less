@@ -1,0 +1,38 @@
+@import '../../styles/theme/default.less';
+
+.abs-tag {
+  display: inline-block;
+  .abs-tag-common-style {
+    background: @abs-tag-bg;
+    border: none;
+    color: @abs-tag-color;
+    border-radius: 0;
+    cursor: default;
+    line-height: 16px;
+    height: 18px;
+    padding: 1px 6px 0 6px;
+    &:hover {
+      opacity: 1;
+    }
+    &:after {
+      border: 0px !important;
+    }
+  }
+  .abs-tag-default {
+    .abs-tag-common-style();
+    line-height: 16px;
+    height: 18px;
+    padding: 1px 6px 0 6px;
+  }
+  .abs-tag-small {
+    .abs-tag-common-style();
+    line-height: 14.5px;
+    height: 16px;
+    padding: 0 3px;
+    transform-origin: center left;
+    transform: scale(0.8) translateY(4px);
+  }
+}
+.abs-tag-hidden {
+  display: none;
+}

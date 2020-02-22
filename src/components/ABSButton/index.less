@@ -1,0 +1,85 @@
+@import "../../styles/theme/default.less";
+
+.abs-btn-style(@btn-color) {
+  &:hover,
+  &:focus {
+    background-color: @btn-color;
+    border-color: @btn-color;
+  }
+}
+.abs-btn {
+  .christmas.ant-btn-primary:before {
+    display: none;
+  }
+  .ant-btn-primary {
+    .abs-btn-style(@abs-btn-primary-color);
+  }
+
+  .ant-btn-primary[disabled],
+  .ant-btn-danger[disabled],
+  .ant-btn-default[disabled]{
+    color: @abs-btn-disabled-font-color;
+    .abs-btn-style(@abs-btn-disabled-color);
+    &:hover,
+    &:focus {
+      color: @abs-btn-disabled-font-color;
+    }
+  }
+
+  .ant-btn-danger {
+    .abs-btn-style(@abs-btn-danger-color);
+  }
+
+  .ant-btn-default {
+    .abs-btn-style(@abs-btn-default-color);
+  }
+
+  .ant-btn {
+    width: 100%;
+    height: 30px;
+    line-height: 28px;
+    padding: 0 20px;
+    border-radius: 2px;
+    color: @abs-btn-color;
+    border-color: transparent;
+    &:hover,
+    &:focus {
+      color: @abs-btn-color;
+    }
+  }
+
+  &.abs-btn-large {
+    width: 279px;
+    .ant-btn {
+      height: 40px;
+      border-radius: 0;
+    }
+  }
+  &.abs-btn-block {
+    width: 100%;
+  }
+  .ant-btn {
+    .anticon + span,
+    span + .anticon {
+      margin-left: 4px;
+    }
+    .abs-icon {
+      vertical-align: -0.075em;
+    }
+  }
+  .abs-btn-icon-padding {
+    padding-right: 4px;
+  }
+  &.abs-btn-hollow {
+    .ant-btn {
+      background-color: transparent;
+      color: @abs-btn-hollow-color;
+      border-color: @abs-btn-hollow-color;
+      &:hover,
+      &:focus {
+        color: @abs-btn-hollow-color-hover;
+        border-color: @abs-btn-hollow-color-hover;
+      }
+    }
+  }
+}

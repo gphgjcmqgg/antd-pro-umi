@@ -1,0 +1,48 @@
+@import "../../../styles/theme/default.less";
+
+.security-header-filter {
+  flex: auto;
+  position: relative;
+  &-laber {
+    color: @abs-page-title-content-title-color;
+    font-size: @font-l;
+    font-weight: bold;
+  }
+  .direction-down-hover {
+    color: @abs-page-title-content-title-color;
+    float: right;
+    margin: 0 10px;
+    cursor: pointer;
+    margin-top: -2px;
+
+    &:hover {
+      color: @abs-page-title-content-title-icon-hover-color;
+    }
+  }
+}
+
+.security-header-filter-operation {
+  // width: 160px;
+  // left: 60px !important;
+  top: 94px !important;
+  .ant-tooltip-inner {
+    padding: 10px 0;
+    p {
+      height: 32px;
+      line-height: 32px;
+      padding-left: 12px;
+      padding-right: 12px;
+      cursor: pointer;
+      &:hover {
+        background: @abs-icon-tooltip-option-hover-bg-color;
+      }
+    }
+  }
+  .ant-tooltip-arrow {
+    right: 12px;
+  }  
+}
+
+.ant-menu-submenu-popup {
+  z-index: 1052;
+}
