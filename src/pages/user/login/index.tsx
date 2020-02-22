@@ -1,6 +1,6 @@
 import { Form } from '@ant-design/compatible';
 import '@ant-design/compatible/assets/index.css';
-import { Button, message } from 'antd';
+import { Button } from 'antd';
 import { FormattedMessage } from 'umi-plugin-react/locale';
 import React, { Component } from 'react';
 import { FormComponentProps } from '@ant-design/compatible/es/form';
@@ -8,7 +8,6 @@ import Link from 'umi/link';
 import { connect } from 'dva';
 import router from 'umi/router';
 
-import { StateType } from './model';
 import styles from './style.less';
 import authService from '@/services/auth/authService';
 
@@ -21,20 +20,15 @@ import ABSCaptcha from '@/components/ABSCaptcha';
 import ABSMessage from '@/components/ABSMessage';
 import commonUtils from '@/utils/commonUtils';
 
-interface UserRegisterProps extends FormComponentProps {
+interface UserLoginProps extends FormComponentProps {
   dispatch: any;
-  userRegister: StateType;
   submitting: boolean;
 }
-interface UserRegisterState {
-  count: number;
-  confirmDirty: boolean;
-  visible: boolean;
-  help: string;
+interface UserLoginState {
   isChange: boolean;
 }
 
-export interface UserRegisterParams {
+export interface UserLoginParams {
   mail: string;
   password: string;
   confirm: string;
@@ -43,31 +37,12 @@ export interface UserRegisterParams {
   isChange: boolean;
 }
 
-class UserRegister extends Component<UserRegisterProps, UserRegisterState> {
-  state: UserRegisterState = {
-    count: 0,
-    confirmDirty: false,
-    visible: false,
-    help: '',
+class UserLogin extends Component<UserLoginProps, UserLoginState> {
+  state: UserLoginState = {
     isChange: false,
   };
 
   interval: number | undefined = undefined;
-
-  componentDidUpdate() {
-    console.log("componentDidUpdate");
-    // const { userRegister, form } = this.props;
-    // const account = form.getFieldValue('mail');
-    // if (userRegister.status === 'ok') {
-    //   message.success('注册成功！');
-    //   router.push({
-    //     pathname: '/user/register-result',
-    //     state: {
-    //       account,
-    //     },
-    //   });
-    // }
-  }
 
   handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -84,30 +59,16 @@ class UserRegister extends Component<UserRegisterProps, UserRegisterState> {
             return;
           }
           if (response.is_success) {
-            //const { getClickUrl } = this.props;
             authService.setAuthCache(response.data);
             const params = commonUtils.getParams(); {
               if (params && params.return_url) {
                 location.href = params.return_url.replace('*', '?').replace(/@/g, '&');
               } else {
-                // if (getClickUrl) {
-                //   const toClickUrl = getClickUrl();
-                //   if (toClickUrl) {
-                //     location.href = toClickUrl;
-                //   } else {
-                //     location.href = routerConfig.home;
-                //   }
-                // } else {
-                //   location.href = routerConfig.home;
-                // }
+                router.push({ pathname: '/' });
               }
             }
           } else {
-            if (String(response.fail_msg).indexOf('验证码') === -1) {
-              ABSMessage.error(response.fail_msg);
-            } else {
-              // this.errorMessage = response.fail_msg;
-            }
+            ABSMessage.error(response.fail_msg);
             this.setState({ isChange: !this.state.isChange });
           }
         });
@@ -189,17 +150,14 @@ class UserRegister extends Component<UserRegisterProps, UserRegisterState> {
 
 export default connect(
   ({
-    userRegister,
     loading,
   }: {
-    userRegister: StateType;
     loading: {
       effects: {
         [key: string]: boolean;
       };
     };
   }) => ({
-    userRegister,
-    submitting: loading.effects['userRegister/submit'],
+    submitting: loading.effects['login/login'],
   }),
-)(Form.create<UserRegisterProps>()(UserRegister));
+)(Form.create<UserLoginProps>()(UserLogin));
