@@ -8,12 +8,6 @@ export default [
         path: '/user/login',
         component: './user/login',
       },
-      {
-        name: 'login',
-        icon: 'smile',
-        path: '/user/register',
-        component: './UserRegister',
-      },
     ],
   },
   {
