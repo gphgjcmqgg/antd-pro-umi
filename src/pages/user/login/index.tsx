@@ -131,7 +131,7 @@ class UserRegister extends Component<UserRegisterProps, UserRegisterState> {
     return (
       <div className={styles.main}>
         <h3>
-          <FormattedMessage id="userregister.login.login" />
+          <FormattedMessage id="userlogin.login.login" />
         </h3>
         <Form onSubmit={this.handleSubmit}>
           <FormItem>
@@ -175,7 +175,7 @@ class UserRegister extends Component<UserRegisterProps, UserRegisterState> {
               type="primary"
               htmlType="submit"
             >
-              <FormattedMessage id="userregister.register.register" />
+              <FormattedMessage id="userlogin.login.login" />
             </Button>
             <Link className={styles.login} to="/user/login">
               <FormattedMessage id="userregister.register.sign-in" />
