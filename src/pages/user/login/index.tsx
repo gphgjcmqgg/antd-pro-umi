@@ -178,7 +178,7 @@ class UserRegister extends Component<UserRegisterProps, UserRegisterState> {
               <FormattedMessage id="userlogin.login.login" />
             </Button>
             <Link className={styles.login} to="/user/login">
-              <FormattedMessage id="userregister.register.sign-in" />
+              <FormattedMessage id="userlogin.login.signup" />
             </Link>
           </FormItem>
         </Form>

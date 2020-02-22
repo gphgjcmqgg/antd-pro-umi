@@ -13,6 +13,7 @@ const { pwa } = defaultSettings;
 const { ANT_DESIGN_PRO_ONLY_DO_NOT_USE_IN_YOUR_PRODUCTION, REACT_APP_ENV } = process.env;
 const isAntDesignProPreview = ANT_DESIGN_PRO_ONLY_DO_NOT_USE_IN_YOUR_PRODUCTION === 'site';
 const { UMI_ENV } = process.env;
+
 const plugins: IPlugin[] = [
   ['umi-plugin-antd-icon-config', {}],
   [
@@ -99,10 +100,10 @@ export default {
     REACT_APP_ENV: REACT_APP_ENV || false,
     ANT_DESIGN_PRO_ONLY_DO_NOT_USE_IN_YOUR_PRODUCTION:
       ANT_DESIGN_PRO_ONLY_DO_NOT_USE_IN_YOUR_PRODUCTION || '', // preview.pro.ant.design only do not use in your production ; preview.pro.ant.design 专用环境变量，请不要在你的项目中使用它。
-    'process.env.apiUrl' : UMI_ENV == 'dev' ? 'api': ''
+    'process.env.apiUrl' : UMI_ENV == 'development' ? '': 'https://www.cn-abs.com'
   },
   proxy: {
-    "/api": {
+    "/apigateway/": {
       target: "https://www.cn-abs.com/",
       changeOrigin: true,
       pathRewrite: { "" : "" }
