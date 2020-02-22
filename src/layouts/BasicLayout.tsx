@@ -195,6 +195,7 @@ const BasicLayout: React.FC<BasicLayoutProps> = props => {
       {...props}
       {...settings}
       // layout="topmenu"
+      fixedHeader={true}
     >
       <Authorized authority={authorized!.authority} noMatch={noMatch}>
         {children}
