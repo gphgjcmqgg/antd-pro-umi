@@ -22,7 +22,6 @@ import RightContent from '@/components/GlobalHeader/RightContent';
 import { ConnectState } from '@/models/connect';
 import { isAntDesignPro, getAuthorityFromRouter } from '@/utils/utils';
 import logo from '../assets/logo.svg';     // 网站图标
-import ABSFooter from '../components/ABSFooter';
 
 const noMatch = (
   <Result
@@ -91,10 +90,18 @@ const defaultFooterDom = (
   />
 );
 
+const links=[
+  {
+    key: '',
+    title: '沪ICP备15008941号',
+    href: 'http://www.beian.miit.gov.cn',
+    blankTarget: true,
+  }
+];
 const footerRender: BasicLayoutProps['footerRender'] = () => {
   if (!isAntDesignPro()) {
     // return defaultFooterDom;
-    return <ABSFooter></ABSFooter>
+    return <DefaultFooter links={links} copyright="2014 - 2020 上海和逸信息科技服务有限公司版权所有"></DefaultFooter>
   }
   return (
     <>
