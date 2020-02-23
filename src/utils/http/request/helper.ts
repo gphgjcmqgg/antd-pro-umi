@@ -1,4 +1,7 @@
 import { AxiosResponse } from 'axios';
+import ABSMessage from '@/components/ABSMessage';
+import authService from '@/services/auth/authService';
+import router from 'umi/router';
 class HttpHelpers {
   /**
    * 请求超时设置
@@ -18,21 +21,45 @@ class HttpHelpers {
     if (response.status >= 200 && response.status < 300) {
       if (response.data.status_code) {
         if (response.data.status_code === 401) {
+          authService.removeAllCache();
+          if (window.location.href && window.location.href.indexOf('return_url') < 0 && window.location.href.indexOf('login') < 0) {
+            router.push({
+              pathname:'/user/login/',
+              query:{
+                return_url : window.location.href.replace('?', '*').replace(/&/g, '@'),
+              },
+            });
+          }
           return;
         }
 
         if (response.data.status_code === 402) {
+          authService.removeAllCache();
           // TODO： 多点登录提示信息
+          if (window.location.href && window.location.href.indexOf('return_url') < 0 && window.location.href.indexOf('login') < 0) {
+            // location.href = routeConfig.login + '?return_url=' + window.location.href.replace('?', '*').replace(/&/g, '@') + '&message=相同账号在其他地点登录，您已被迫退出';
+            router.push({
+              pathname:'/user/login/',
+              query:{
+                return_url: window.location.href.replace('?', '*').replace(/&/g, '@'),
+                message: "相同账号在其他地点登录，您已被迫退出"
+              },
+            });
+
+          }
           return;
         }
 
         if (response.data.status_code === 403) {
-          // location.href = routeConfig.home;
+          router.push({
+            pathname:'/welcome/',
+          });
           return;
         }
 
         if (response.data.status_code === 500) {
           // console.log(response.data.error_message);
+          ABSMessage.error(response.data.error_message);
           return;
         }
       } else {
