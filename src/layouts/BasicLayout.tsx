@@ -22,7 +22,7 @@ import RightContent from '@/components/GlobalHeader/RightContent';
 import { ConnectState } from '@/models/connect';
 import { isAntDesignPro, getAuthorityFromRouter } from '@/utils/utils';
 import logo from '../assets/logo.svg';     // 网站图标
-
+import { reloadAuthorized } from "@/utils/Authorized";
 const noMatch = (
   <Result
     status="403"
@@ -136,6 +136,8 @@ const BasicLayout: React.FC<BasicLayoutProps> = props => {
         type: 'user/fetchCurrent',
       });
     }
+
+    reloadAuthorized();   // 重复刷新权限
   }, []);
   /**
    * init variables

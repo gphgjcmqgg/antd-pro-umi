@@ -51,14 +51,12 @@ class HttpHelpers {
         }
 
         if (response.data.status_code === 403) {
-          router.push({
-            pathname:'/welcome/',
-          });
+          router.push('/exception/403');
           return;
         }
 
         if (response.data.status_code === 500) {
-          // console.log(response.data.error_message);
+          router.push('/exception/500');
           ABSMessage.error(response.data.error_message);
           return;
         }

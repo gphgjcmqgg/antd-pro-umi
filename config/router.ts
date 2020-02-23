@@ -4,6 +4,10 @@ export default [
     component: '../layouts/UserLayout',
     routes: [
       {
+        path: '/user',
+        redirect: '/user/login',
+      },
+      {
         name: 'login',
         path: '/user/login',
         component: './user/login',
@@ -15,62 +19,37 @@ export default [
   },
   {
     path: '/',
-    component: '../layouts/SecurityLayout',
+    component: '../layouts/BasicLayout',
+    Routes: ['src/pages/Authorized'],
     routes: [
       {
         path: '/',
-        component: '../layouts/BasicLayout',
-        Routes: ['src/pages/Authorized'],
-        authority: ['admin', 'user'],
-        routes: [
-          {
-            path: '/',
-            redirect: '/welcome',
-          },
-          {
-            path: '/welcome',
-            name: 'welcome',
-            icon: 'smile',
-            component: './Welcome',
-          },
-          {
-            path: '/admin',
-            name: 'admin',
-            icon: 'crown',
-            component: './Admin',
-            authority: ['admin'],
-            routes: [
-              {
-                path: '/admin/sub-page',
-                name: 'sub-page',
-                icon: 'smile',
-                component: './Welcome',
-                authority: ['admin'],
-              },
-            ],
-          },
-          {
-            name: 'list',
-            icon: 'smile',
-            path: '/list/card/list',
-            component: './list/card/list',
-          },
-          {
-            name: '403',
-            hideInMenu: true,
-            path: '/exception/403',
-            component: './exception/403',
-          },
-          {
-            name: '500',
-            hideInMenu: true,
-            path: '/exception/500',
-            component: './exception/500',
-          },
-          {
-            component: './404',
-          },
-        ],
+        redirect: '/welcome',
+      },
+      {
+        path: '/welcome',
+        name: 'welcome',
+        icon: 'smile',
+        component: './Welcome',
+      },
+      {
+        name: 'list',
+        icon: 'table',
+        path: '/list/card/list',
+        component: './list/card/list',
+        authority: ['admin'],
+      },
+      {
+        name: '403',
+        hideInMenu: true,
+        path: '/exception/403',
+        component: './exception/403',
+      },
+      {
+        name: '500',
+        hideInMenu: true,
+        path: '/exception/500',
+        component: './exception/500',
       },
       {
         component: './404',
