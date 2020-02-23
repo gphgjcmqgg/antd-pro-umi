@@ -6,6 +6,7 @@ import { setAuthority } from '@/utils/authority';
 import { getPageQuery } from '@/utils/utils';
 import { GlobalApi, AccountApi } from '@/config/api';
 import Request from '@/utils/http/request/index';
+import AuthService from '@/services/auth/authService';
 
 export interface StateType {
   status?: 'ok' | 'error';
@@ -42,6 +43,7 @@ const Model: LoginModelType = {
     },
     logout() {
       const { redirect } = getPageQuery();
+      AuthService.removeAllCache();
       // Note: There may be security issues, please note
       if (window.location.pathname !== '/user/login' && !redirect) {
         router.replace({

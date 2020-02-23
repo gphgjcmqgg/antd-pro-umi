@@ -4,7 +4,7 @@ import { connect } from 'dva';
 import Authorized from '@/utils/Authorized';
 import { getRouteAuthority } from '@/utils/utils';
 import { ConnectProps, ConnectState, UserModelState } from '@/models/connect';
-
+import AuthService from '@/services/auth/authService';
 interface AuthComponentProps extends ConnectProps {
   user: UserModelState;
 }
@@ -19,11 +19,13 @@ const AuthComponent: React.FC<AuthComponentProps> = ({
   },
   user,
 }) => {
-  const { currentUser } = user;
+  // const { currentUser } = user;
   
   const { routes = [] } = route;
-  const isLogin = currentUser && currentUser.name;
-  console.log(isLogin);
+  // const isLogin = currentUser && currentUser.name ? true : false;
+  // console.log('isLogin',isLogin);
+  const isLogin = AuthService.checkIsLogin();
+  console.log('isLogin', isLogin)
   return (
     <Authorized
       authority={getRouteAuthority(location.pathname, routes) || ''}

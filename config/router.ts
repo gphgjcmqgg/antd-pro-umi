@@ -31,6 +31,7 @@ export default [
         name: 'welcome',
         icon: 'smile',
         component: './Welcome',
+        authority: ['admin', 'user'],
       },
       {
         name: 'list',

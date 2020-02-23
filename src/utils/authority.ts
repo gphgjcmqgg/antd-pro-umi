@@ -18,6 +18,7 @@ export function getAuthority(str?: string): string | string[] {
       authority = authorityString;
     }
   }
+  
   if (typeof authority === 'string') {
     return [authority];
   }

@@ -1,7 +1,8 @@
 import { Effect } from 'dva';
 import { Reducer } from 'redux';
 
-import { queryCurrent, query as queryUsers } from '@/services/user';
+import { query as queryUsers } from '@/services/user';
+import AuthService, { IUser } from '@/services/auth/authService';
 
 export interface CurrentUser {
   avatar?: string;
@@ -50,10 +51,11 @@ const UserModel: UserModelType = {
       });
     },
     *fetchCurrent(_, { call, put }) {
-      const response = yield call(queryCurrent);
+      // const response = yield call(queryCurrent);
+      const user = AuthService.getCurrentUser() as IUser;
       yield put({
         type: 'saveCurrentUser',
-        payload: response,
+        payload: user,
       });
     },
   },
