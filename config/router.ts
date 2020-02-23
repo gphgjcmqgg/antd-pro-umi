@@ -56,6 +56,18 @@ export default [
             component: './list/card/list',
           },
           {
+            name: '403',
+            hideInMenu: true,
+            path: '/exception/403',
+            component: './exception/403',
+          },
+          {
+            name: '500',
+            hideInMenu: true,
+            path: '/exception/500',
+            component: './exception/500',
+          },
+          {
             component: './404',
           },
         ],
