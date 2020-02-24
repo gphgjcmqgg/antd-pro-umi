@@ -17,13 +17,8 @@ yarn global add umi
 
 yarn create umi
 
-Select the boilerplate type? 选择 app
+Select the boilerplate type? 选择 antd pro
 Do you want to use typescript? 选择 Yes
-What functionality do you want to enable? 空格键选择 antd, dva, code splitting, dll
-1. antd- 包含antd
-2. dva- 包含dva
-3. code splitting- 包含按需加载
-4. dll- 包含dll二次启动加速
 
 ## umi通用目录
 
@@ -63,7 +58,7 @@ What functionality do you want to enable? 空格键选择 antd, dva, code splitt
 - git clone                 克隆代码
 - yarn install              安装包依赖
 - yarn start                开发环境启动
-- yarn build                打包开发环境包
+- yarn build                打包开发环境包  部署IIS站点
 - yanr analyze              打包并分析包大小 网页显示
 
 ## umi config基本配置
@@ -73,6 +68,19 @@ treeShaking                  移除未引用代码
 define                       定义环境变量
 outputPath                   build输出路径
 routes                       用于批量修改路由
+plugins                      配置插件列表 这里主要使用了umi-plugin-react插件
+history                      调整路由模式 hash模式或者brower模式
+targets                      配置浏览器最低版本，提高浏览器兼容性
+block                        配置区块的访问地址     
+uglifyJSOptions              开发环境 加速打包
+theme                        配置主题，页面风格
+define                       可以定义环境变量
+proxy                        开启服务器代理，解决跨域问题
+ignoreMomentLocale           忽略 moment 的 国际化locale 文件，用于减少尺寸
+lessLoaderOptions            给 less-loader 的额外配置项   
+disableRedirectHoist         禁用 redirect 上提
+manifest                     配置后会生成 asset-manifest.json
+chainWebpack                 webpack扩展
 
 ## umi-plugin-react 插件配置说明
 
@@ -102,6 +110,47 @@ chunks              默认是 ['umi']，可修改，做了 vendors 依赖提取�
                     配置在umi-plugin-react下chunks: ['vendors', 'umi']
                     另外在chainWebpack设置要提取的依赖
 
+## route配置说明
 
+    path: '/',                                      --执行路由
+    component: '../layouts/BasicLayout',            --执行页面layout
+    Routes: ['src/pages/Authorized'],               --使用权限路由
+    routes: [                                       --routes下配置子路由
+      {
+        path: '/',                                  
+        redirect: '/welcome',                       --默认跳转的路由
+      },
+      {
+        path: '/welcome',                           
+        name: 'welcome',                            --路由名称对应 src\locales\zh-cn(国际化目录)\ment.ts里对应中文名称
+        icon: 'smile',                              --对应路由使用的图标 参考 antd icon
+        component: './Welcome',                     --对应使用的组件路由
+        authority: ['admin', 'user'],               --路由权限配置 admin user 可以访问
+      },
+      {
+        name: 'list',
+        icon: 'table',
+        path: '/list/card/list',
+        component: './list/card/list',
+        authority: ['admin'],
+      },
+      {
+        name: '403',
+        hideInMenu: true,                           --隐藏显示菜单
+        path: '/exception/403',
+        component: './exception/403',
+      },
 
+## 使用区块 快速开发页面
 
+config配置中配置了区块的获取地址
+    block: {
+        // 国内用户可以使用码云
+        //defaultGitUrl: 'https://gitee.com/ant-design/pro-blocks',
+        defaultGitUrl: 'https://github.com/ant-design/pro-blocks',
+    },
+区块包括以下内容
+    显示页面   样式  mock数据   国际化文件      server dva 请求
+
+umi block list          --显示所有可以访问的区块     还可以通过可视化工具umi ui 中看到所有区块的样子
+umi block add 区块名称   --添加区块到项目   建议使用umi可视化来添加区块
