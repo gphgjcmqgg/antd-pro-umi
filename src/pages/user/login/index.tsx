@@ -124,7 +124,7 @@ class UserLogin extends Component<UserLoginProps, UserLoginState> {
               <ABSInput
                 placeholder="请输入验证码"
                 type="text"
-                addonAfter={<ABSCaptcha isChange={isChange} className="login-captcha" />}
+                addonAfter={<ABSCaptcha isChange={isChange} className={styles.getCaptcha} />}
               />
             )}
           </FormItem>
@@ -138,8 +138,13 @@ class UserLogin extends Component<UserLoginProps, UserLoginState> {
             >
               <FormattedMessage id="userlogin.login.login" />
             </Button>
-            <Link className={styles.login} to="/user/login">
-              <FormattedMessage id="userlogin.login.signup" />
+          </FormItem>
+          <FormItem>
+            <Link className={styles.forgetpass} to="/user/login">
+                <FormattedMessage id="userlogin.login.forgot-password" />
+            </Link>
+            <Link className={styles.register} to="/user/login">
+                <FormattedMessage id="userlogin.login.signup" />
             </Link>
           </FormItem>
         </Form>

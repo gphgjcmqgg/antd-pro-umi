@@ -4,27 +4,27 @@
   width: 368px;
   margin: 0 auto;
 
-  :global {
-    .ant-form-item {
-      margin-bottom: 24px;
-    }
-  }
-
   h3 {
     margin-bottom: 20px;
     font-size: 16px;
+    text-align: center;
   }
-
+  
   .getCaptcha {
-    display: block;
+    & img {
+      height: 28px;
+    }
+    
+  }
+  .submit {
     width: 100%;
   }
 
-  .submit {
-    width: 50%;
+  .forgetpass {
+    float: left;
+    line-height: @btn-height-lg;
   }
-
-  .login {
+  .register {
     float: right;
     line-height: @btn-height-lg;
   }
